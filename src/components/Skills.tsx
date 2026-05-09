@@ -1,5 +1,4 @@
 import { Card } from "@/components/ui/card";
-import SkillIcon from "@/components/ui/SkillIcon";
 import {
   Code2,
   Server,
@@ -7,30 +6,29 @@ import {
   GitBranch,
   ClipboardList,
   Layers,
-  Globe,
-  Palette,
-  Braces,
-  Atom,
-  Wind,
-  FileCode,
-  Box,
-  Workflow,
-  GitMerge,
-  Github,
-  Table2,
-  Triangle,
-  Cylinder,
-  LayoutGrid,
-  ListTodo,
-  Network,
-  PenTool,
 } from "lucide-react";
+import {
+  SiHtml5,
+  SiCss,
+  SiJavascript,
+  SiReact,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiExpress,
+  SiMysql,
+  SiPostgresql,
+  SiMongodb,
+  SiGit,
+  SiGithub,
+  SiJira,
+} from "react-icons/si";
+import { IconType } from "react-icons";
 import { type ComponentType, type SVGProps } from "react";
 
 interface Skill {
   label: string;
-  icon: ComponentType<SVGProps<SVGSVGElement>>;
-  color?: string;
+  icon: IconType;
+  color: string;
 }
 
 interface SkillCategory {
@@ -44,54 +42,54 @@ const skillCategories: SkillCategory[] = [
     title: "Frontend",
     icon: Code2,
     skills: [
-      { label: "HTML5", icon: Globe, color: "#e34f26" },
-      { label: "CSS3", icon: Palette, color: "#264de4" },
-      { label: "JavaScript", icon: Braces, color: "#f7df1e" },
-      { label: "React", icon: Atom, color: "#61dafb" },
-      { label: "Tailwind CSS", icon: Wind, color: "#06b6d4" },
+      { label: "HTML5", icon: SiHtml5, color: "#e34f26" },
+      { label: "CSS3", icon: SiCss, color: "#264de4" },
+      { label: "JavaScript", icon: SiJavascript, color: "#f7df1e" },
+      { label: "React", icon: SiReact, color: "#61dafb" },
+      { label: "Tailwind CSS", icon: SiTailwindcss, color: "#06b6d4" },
     ],
   },
   {
     title: "Backend",
     icon: Server,
     skills: [
-      { label: "Node.js", icon: FileCode, color: "#8cc84b" },
-      { label: "Express.js", icon: Box, color: "#000000" },
+      { label: "Node.js", icon: SiNodedotjs, color: "#8cc84b" },
+      { label: "Express.js", icon: SiExpress, color: "#ffffff" },
     ],
   },
   {
     title: "Database",
     icon: Database,
     skills: [
-      { label: "MySQL", icon: Table2, color: "#00618a" },
-      { label: "PostgreSQL", icon: Cylinder, color: "#336791" },
-      { label: "MongoDB", icon: Database, color: "#47a248" },
+      { label: "MySQL", icon: SiMysql, color: "#00618a" },
+      { label: "PostgreSQL", icon: SiPostgresql, color: "#336791" },
+      { label: "MongoDB", icon: SiMongodb, color: "#47a248" },
     ],
   },
   {
     title: "Version Control",
     icon: GitBranch,
     skills: [
-      { label: "Git", icon: GitMerge, color: "#f05032" },
-      { label: "GitHub", icon: Github, color: "#181717" },
+      { label: "Git", icon: SiGit, color: "#f05032" },
+      { label: "GitHub", icon: SiGithub, color: "#ffffff" },
     ],
   },
   {
     title: "Project Management",
     icon: ClipboardList,
     skills: [
-      { label: "Jira", icon: LayoutGrid, color: "#0052cc" },
-      { label: "Kanban", icon: ListTodo, color: "#0052cc" },
-      { label: "Scrum", icon: Workflow, color: "#6554c0" },
+      { label: "Jira", icon: SiJira, color: "#0052cc" },
+      { label: "Kanban", icon: SiJira, color: "#0052cc" },
+      { label: "Scrum", icon: SiJira, color: "#6554c0" },
     ],
   },
   {
     title: "Design Tools",
     icon: Layers,
     skills: [
-      { label: "Enterprise Arch.", icon: Network, color: "#f0a500" },
-      { label: "StarUML", icon: Triangle, color: "#9c27b0" },
-      { label: "Visual Paradigm", icon: PenTool, color: "#1565c0" },
+      { label: "Enterprise Arch.", icon: SiJira, color: "#f0a500" },
+      { label: "StarUML", icon: SiJira, color: "#9c27b0" },
+      { label: "Visual Paradigm", icon: SiJira, color: "#1565c0" },
     ],
   },
 ];
@@ -99,6 +97,24 @@ const skillCategories: SkillCategory[] = [
 const Skills = () => {
   return (
     <section id="skills" className="py-20">
+      <style>{`
+        @keyframes skill-pop {
+          from { opacity: 0; transform: scale(0.82) translateY(8px); }
+          to   { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .skill-chip {
+          animation: skill-pop 0.5s ease-out both;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .skill-chip:hover {
+          transform: scale(1.1) translateY(-2px);
+          box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .skill-chip { animation: none !important; }
+        }
+      `}</style>
+
       <div className="container max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
           Technical <span className="text-gradient">Skills</span>
@@ -107,7 +123,6 @@ const Skills = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, catIndex) => {
             const CategoryIcon = category.icon;
-            // running count of skills before this category, for stagger offset
             const skillOffset = skillCategories
               .slice(0, catIndex)
               .reduce((acc, c) => acc + c.skills.length, 0);
@@ -125,16 +140,34 @@ const Skills = () => {
 
                   <h3 className="text-2xl font-bold">{category.title}</h3>
 
-                  <div className="flex flex-wrap gap-2 justify-center">
-                    {category.skills.map((skill, skillIndex) => (
-                      <SkillIcon
-                        key={skill.label}
-                        icon={skill.icon}
-                        label={skill.label}
-                        color={skill.color}
-                        index={skillOffset + skillIndex}
-                      />
-                    ))}
+                  <div className="flex flex-wrap gap-3 justify-center">
+                    {category.skills.map((skill, skillIndex) => {
+                      const Icon = skill.icon;
+                      return (
+                        <div
+                          key={skill.label}
+                          role="img"
+                          aria-label={skill.label}
+                          tabIndex={0}
+                          className="skill-chip flex items-center gap-2 bg-secondary/80 rounded-lg px-3 py-2 shadow-md cursor-default focus:outline-none focus:ring-2 focus:ring-primary/50"
+                          style={{
+                            animationDelay: `${(skillOffset + skillIndex) * 0.07}s`,
+                          }}
+                        >
+                          <Icon
+                            style={{
+                              color: skill.color,
+                              width: "1.2rem",
+                              height: "1.2rem",
+                              flexShrink: 0,
+                            }}
+                          />
+                          <span className="text-sm font-medium text-foreground/80 whitespace-nowrap">
+                            {skill.label}
+                          </span>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               </Card>
