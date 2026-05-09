@@ -189,16 +189,21 @@ const Hero = () => {
           50%       { border-color: transparent; }
         }
 
-        .typing-name {
-          display: inline-block;
-          overflow: hidden;
-          white-space: nowrap;
-          border-right: 3px solid hsl(var(--primary));
-          width: 0;
-          animation:
-            typing 2s steps(13, end) 1s forwards,
-            blink 0.7s step-end infinite;
-        }
+ .typing-name {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid hsl(var(--primary));
+
+  width: 0;
+
+  line-height: 1.1;
+  vertical-align: middle;
+
+  animation:
+    typing 3s steps(13, end) infinite alternate,
+    blink 0.7s step-end infinite;
+}
 
         @media (prefers-reduced-motion: reduce) {
           [style*="animation"] { animation: none !important; }
