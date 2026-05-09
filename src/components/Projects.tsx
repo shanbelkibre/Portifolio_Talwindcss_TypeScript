@@ -1,12 +1,11 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
-import houseRental from "@/assets/houserntal.png";
-import ethioIntern from "@/assets/Ethiointern.png";
-import portfolio from "@/assets/portifolio.png";
-import studentReg from "@/assets/studentregisterion.png";
-import studentMgmt from "@/assets/studentmanagment.png";
-
+import houseRental from "@/assets/houserntal.jpg";
+import ethioIntern from "@/assets/Ethiointern.jpg";
+import portfolio from "@/assets/portifolio.jpg";
+import studentReg from "@/assets/studentregisterion.jpg";
+import studentMgmt from "@/assets/studentmanagment.jpg";
 const Projects = () => {
   const projects = [
     {
