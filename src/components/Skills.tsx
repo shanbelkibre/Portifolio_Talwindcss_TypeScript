@@ -7,6 +7,7 @@ import {
   ClipboardList,
   Layers,
 } from "lucide-react";
+
 import {
   SiHtml5,
   SiCss,
@@ -21,6 +22,10 @@ import {
   SiGit,
   SiGithub,
   SiJira,
+  SiCplusplus, // ADD THIS
+  // ADD THIS
+  SiPython, // ADD THIS
+  SiPhp, // ADD THIS
 } from "react-icons/si";
 import { IconType } from "react-icons";
 import { type ComponentType, type SVGProps } from "react";
@@ -57,6 +62,18 @@ const skillCategories: SkillCategory[] = [
       { label: "Express.js", icon: SiExpress, color: "#ffffff" },
     ],
   },
+  {
+    title: "Programming Languages",
+    icon: Code2,
+    skills: [
+      { label: "C++", icon: SiCplusplus, color: "#00599c" },
+
+      { label: "Python", icon: SiPython, color: "#3776ab" },
+      { label: "PHP", icon: SiPhp, color: "#777bb4" },
+      { label: "DSA", icon: SiJavascript, color: "#f7df1e" },
+    ],
+  },
+
   {
     title: "Database",
     icon: Database,
