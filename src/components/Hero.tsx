@@ -14,7 +14,7 @@ const Hero = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        backgroundImage: `linear-gradient(...)`,
+        backgroundImage: `linear-gradient(to bottom, hsl(var(--background) / 0.88), hsl(var(--background) / 0.97)), url(${heroBg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "fixed",
@@ -46,7 +46,6 @@ const Hero = () => {
             style={{ animation: "hero-fade-in 0.7s ease-out both" }}
           >
             <div className="relative">
-              {/* Layered glow rings */}
               <div
                 className="absolute inset-0 rounded-full"
                 style={{
@@ -93,7 +92,8 @@ const Hero = () => {
               className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
               style={{ animation: "hero-fade-in 0.6s ease-out 0.1s both" }}
             >
-              Hi, I'm <span className="text-gradient">Shanbel Kibre</span>
+              Hi, I'm{" "}
+              <span className="text-gradient typing-name">Shanbel Kibre</span>
             </h1>
 
             <p
@@ -146,6 +146,7 @@ const Hero = () => {
               >
                 <Github className="w-6 h-6" />
               </a>
+
               <a
                 href="https://linkedin.com/in/shanbel-kibre-b5ab38369"
                 target="_blank"
@@ -172,12 +173,40 @@ const Hero = () => {
           0%, 100% { transform: translateY(0px); }
           50% { transform: translateY(-14px); }
         }
+
         @keyframes hero-fade-in {
           from { opacity: 0; transform: translateY(22px); }
-          to { opacity: 1; transform: translateY(0); }
+          to   { opacity: 1; transform: translateY(0); }
         }
+
+        @keyframes typing {
+          from { width: 0; }
+          to   { width: 7.8em; }
+        }
+
+        @keyframes blink {
+          0%, 100% { border-color: hsl(var(--primary)); }
+          50%       { border-color: transparent; }
+        }
+
+        .typing-name {
+          display: inline-block;
+          overflow: hidden;
+          white-space: nowrap;
+          border-right: 3px solid hsl(var(--primary));
+          width: 0;
+          animation:
+            typing 2s steps(13, end) 1s forwards,
+            blink 0.7s step-end infinite;
+        }
+
         @media (prefers-reduced-motion: reduce) {
           [style*="animation"] { animation: none !important; }
+          .typing-name {
+            width: 7.8em;
+            border-right: none;
+            animation: none !important;
+          }
         }
       `}</style>
     </section>
