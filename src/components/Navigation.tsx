@@ -31,6 +31,7 @@ const Navigation = () => {
           ? "bg-background/95 backdrop-blur-sm border-b border-border shadow-lg"
           : "bg-transparent"
       }`}
+      style={{ paddingBottom: 0 }}
     >
       <div className="container max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
@@ -49,7 +50,7 @@ const Navigation = () => {
                 {link.label}
               </a>
             ))}
-            
+
             {/* Theme Toggle */}
             <Button
               variant="ghost"
@@ -79,6 +80,7 @@ const Navigation = () => {
               variant="ghost"
               size="icon"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
             >
               {isMobileMenuOpen ? <X /> : <Menu />}
             </Button>

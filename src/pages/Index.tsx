@@ -7,14 +7,14 @@ import Contact from "@/components/Contact";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div>
       <Navigation />
       <Hero />
       <About />
       <Skills />
       <Projects />
       <Contact />
-      
+
       <footer className="bg-secondary/30 py-8 text-center text-muted-foreground">
         <p>© 2024 Shanbel Kibre. Built with passion and code.</p>
       </footer>
