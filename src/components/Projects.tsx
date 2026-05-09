@@ -86,33 +86,47 @@ const Projects = () => {
     <section id="projects" className="py-20 bg-secondary/30">
       <style>{`
         .project-card {
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
         .project-card:hover {
-          transform: translateY(-6px);
-          box-shadow: 0 20px 60px hsl(var(--primary) / 0.2);
+          transform: translateY(-8px);
+          box-shadow: 0 24px 80px hsl(var(--primary) / 0.25);
         }
         .project-image-overlay {
           background: linear-gradient(
             to bottom,
-            rgba(0,0,0,0.1) 0%,
-            rgba(0,0,0,0.65) 100%
+            rgba(0,0,0,0.15) 0%,
+            rgba(0,0,0,0.75) 100%
           );
           transition: background 0.4s ease;
         }
         .project-card:hover .project-image-overlay {
           background: linear-gradient(
             to bottom,
-            rgba(0,0,0,0.05) 0%,
-            rgba(0,0,0,0.45) 100%
+            rgba(0,0,0,0.4) 0%,
+            rgba(0,0,0,0.85) 100%
           );
         }
         .project-title-overlay {
-          transform: translateY(4px);
+          transform: translateY(0px);
           transition: transform 0.4s ease;
         }
         .project-card:hover .project-title-overlay {
-          transform: translateY(0px);
+          transform: translateY(-2px);
+        }
+        .project-hover-info {
+          opacity: 0;
+          transform: translateY(10px);
+          transition: opacity 0.4s ease, transform 0.4s ease;
+          position: absolute;
+          bottom: 48px;
+          left: 0;
+          right: 0;
+          padding: 0 1rem;
+        }
+        .project-card:hover .project-hover-info {
+          opacity: 1;
+          transform: translateY(0);
         }
         @keyframes card-fade-in {
           from { opacity: 0; transform: translateY(24px); }
@@ -121,14 +135,20 @@ const Projects = () => {
         .card-animate {
           animation: card-fade-in 0.5s ease-out both;
         }
+        .image-zoom {
+          transition: transform 0.6s ease;
+        }
+        .project-card:hover .image-zoom {
+          transform: scale(1.08);
+        }
       `}</style>
 
-      <div className="container max-w-6xl mx-auto">
+      <div className="w-full max-w-7xl mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
           Featured <span className="text-gradient">Projects</span>
         </h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <Card
               key={project.title}
@@ -137,27 +157,45 @@ const Projects = () => {
             >
               {/* Image section */}
               <div
-                className="relative w-full flex-shrink-0"
-                style={{ height: "200px" }}
+                className="relative w-full flex-shrink-0 overflow-hidden"
+                style={{ height: "260px" }}
               >
+                {/* Zoomable background */}
                 <div
-                  className="absolute inset-0"
+                  className="image-zoom absolute inset-0"
                   style={{
                     backgroundImage: `url(${project.image})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                   }}
                 />
+
                 {/* Gradient overlay */}
                 <div className="project-image-overlay absolute inset-0" />
 
-                {/* Bold title on image */}
-                <div className="absolute inset-0 flex items-end p-4">
+                {/* Tech tags shown on hover */}
+                <div className="project-hover-info">
+                  <div className="flex flex-wrap gap-1 justify-center">
+                    {project.tech.slice(0, 3).map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2 py-0.5 rounded text-xs font-semibold text-white"
+                        style={{ background: "hsl(var(--primary) / 0.8)" }}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Bold title — always fully visible */}
+                <div className="absolute bottom-0 left-0 right-0 p-4">
                   <h3
-                    className="project-title-overlay text-white font-black text-lg leading-tight"
+                    className="project-title-overlay text-white font-black leading-tight"
                     style={{
+                      fontSize: "clamp(0.9rem, 2vw, 1.1rem)",
                       textShadow:
-                        "0 2px 16px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,0.8)",
+                        "0 2px 16px rgba(0,0,0,1), 0 1px 4px rgba(0,0,0,1)",
                     }}
                   >
                     {project.title}
