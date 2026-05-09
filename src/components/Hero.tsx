@@ -7,14 +7,14 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative w-full flex items-center justify-center min-h-screen overflow-hidden  pt-0 mr-0"
+      className="relative w-full flex items-start justify-center min-h-screen overflow-hidden !pt-0"
       style={{
         backgroundImage: `linear-gradient(to bottom, hsl(var(--background) / 0.9), hsl(var(--background) / 0.95)), url(${heroBg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      <div className="container max-w-6xl mx-auto px-6 py-16">
+      <div className="container max-w-6xl mx-auto px-6 py-0">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16">
           {/* Profile Image */}
           <div className="order-2 lg:order-1 w-full max-w-sm lg:w-5/12 flex justify-center animate-fade-in">
@@ -61,7 +61,7 @@ const Hero = () => {
 
             <div className="flex gap-4 justify-center lg:justify-start">
               <a
-                href="https://github.com/shambelkibr"
+                href="https://github.com/shanbelkibre"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-secondary hover:bg-secondary/80 transition-colors"
