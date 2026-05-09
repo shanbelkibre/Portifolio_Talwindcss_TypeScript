@@ -4,7 +4,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 
 const Contact = () => {
   return (
-    <section id="contact">
+    <section id="contact" className="pb-20 py-20">
       <div className="container max-w-4xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
           Get In <span className="text-gradient">Touch</span>

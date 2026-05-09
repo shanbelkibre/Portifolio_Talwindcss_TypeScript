@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative w-full overflow-hidden"
+      className="relative w-full overflow-hidden pb-20"
       style={{
         minHeight: "100vh",
         paddingTop: "80px",
