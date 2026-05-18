@@ -42,34 +42,7 @@ const Projects = () => {
       github: "https://github.com/shambelkibr/my-Portfolio-by-React",
       demo: "https://shanbelkibremyportfolio.vercel.app/",
       image: portfolio,
-    },
-    {
-      title: "Student Registration Platform",
-      description:
-        "A simple Express + EJS + PostgreSQL student registration system for performing CRUD operations (Create, Read, Update, Delete).",
-      tech: [
-        "Node.js",
-        "Express.js",
-        "EJS",
-        "PostgreSQL",
-        "HTML",
-        "CSS",
-        "JavaScript",
-      ],
-      github: "https://github.com/shambelkibr/student-registration_platForm",
-      demo: "https://student-registration-plat-form.vercel.app/",
-      image: studentReg,
-    },
-  
-    {
-      title: "Distributed Student Management System",
-      description:
-        "A 3-layer distributed system demonstrating communication between React frontend, Express.js backend, Java Socket server, and MySQL database. Features: add/view students, search by age/sex/grade, real-time message flow across all layers.",
-      tech: ["React", "Express.js", "Java (Sockets)", "MySQL", "Axios"],
-      github: "https://github.com/shambelkibr/Student-_managment_java_Socket",
-      demo: "https://student-managment-java-socket.vercel.app/",
-      image: studentMgmt,
-    },
+    }
   ];
 
   return (
