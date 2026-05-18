@@ -60,16 +60,7 @@ const Projects = () => {
       demo: "https://student-registration-plat-form.vercel.app/",
       image: studentReg,
     },
-    {
-      title: "Task Management Dashboard",
-      description:
-        "An intuitive task management application with drag-and-drop functionality, team collaboration features, and deadline tracking. Built with modern UI/UX principles for optimal productivity.",
-      tech: ["JavaScript", "Node.js", "MySQL", "Tailwind CSS"],
-      github: null,
-      demo: null,
-      image:
-        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&q=80",
-    },
+  
     {
       title: "Distributed Student Management System",
       description:
