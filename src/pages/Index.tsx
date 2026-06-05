@@ -10,16 +10,18 @@ const Index = () => {
   return (
     <>
       <Helmet>
-         
- <meta name="google-site-verification" content="d91ab87c866db596" />
+        {/* Google Verification */}
+        <meta name="google-site-verification" content="d91ab87c866db596" />
 
         {/* Basic SEO */}
         <title>Shanbel Kibre | Full-Stack Developer</title>
-        <meta name="description" content="I'm Shanbel Kibre, a Full-Stack Developer specializing in React, TypeScript, and Tailwind CSS. Explore my projects and let's build something great together." />
-        <meta name="keywords" content="Shanbel Kibre, Shambel Kibre, Full-Stack Developer, Software Engineer, React Developer, TypeScript, Tailwind CSS, Portfolio, Ethiopia" />
+      
+        <meta name="description" content="I'm Shanbel Kibre, an Ethiopian Full-Stack Developer from Debre Birhan, based in Addis Ababa. Specializing in React, TypeScript, Tailwind CSS, and Node.js. Available for freelance and remote work. Explore my projects and let's build something great together." />
+       
+        <meta name="keywords" content="Shanbel Kibre, Shambel Kibre, Shanble Kibre, Shan Kibre, Kibre, Shanbel, Shambel, Full-Stack Developer, Frontend Developer, Backend Developer, Software Engineer, Web Developer, React Developer, TypeScript Developer, JavaScript Developer, Tailwind CSS, Node.js Developer, Cyber Security, Ethiopia Developer, Ethiopian Software Engineer, Addis Ababa Developer, AA Developer, Debre Birhan Developer, Debre Birhan Student, Debre Birhan University, Ethiopian Full-Stack Developer, Ethiopian Web Developer, African Developer, Portfolio, Hire Developer, Remote Developer Ethiopia, React TypeScript Portfolio, Next.js Developer, MERN Stack Developer" />
+
         <meta name="author" content="Shanbel Kibre" />
         <link rel="canonical" href="https://shanbelkibredev.vercel.app/" />
-       
 
         {/* Open Graph (LinkedIn, WhatsApp, Facebook) */}
         <meta property="og:type" content="website" />
@@ -40,6 +42,29 @@ const Index = () => {
         {/* Profile Links */}
         <link rel="me" href="https://www.linkedin.com/in/shanbel-kibre/" />
         <link rel="me" href="https://github.com/shanbelkibre" />
+
+        {/* JSON-LD Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Shanbel Kibre",
+            "url": "https://shanbelkibredev.vercel.app/",
+            "image": "https://shanbelkibredev.vercel.app/preview.png",
+            "jobTitle": "Full-Stack Developer",
+           "description": "Ethiopian Full-Stack Developer from Debre Birhan, based in Addis Ababa. Specializing in React, TypeScript, Tailwind CSS, and Node.js.",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Addis Ababa",
+              "addressRegion": "Addis Ababa",
+              "addressCountry": "ET"
+            },
+            "sameAs": [
+              "https://www.linkedin.com/in/shanbel-kibre/",
+              "https://github.com/shanbelkibre"
+            ]
+          })}
+        </script>
       </Helmet>
 
       <div>
