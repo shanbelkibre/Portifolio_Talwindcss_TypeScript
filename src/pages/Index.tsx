@@ -10,7 +10,8 @@ const Index = () => {
   return (
     <>
       <Helmet>
-          <meta name="google-site-verification" content="googled91ab87c866db596" />
+         
+          <meta name="google-site-verification" content="MoPQDtCg0ZsIK-28mtxnmNP_eVNY2XNRhvst37iqP8E" />
         {/* Basic SEO */}
         <title>Shanbel Kibre | Full-Stack Developer</title>
         <meta name="description" content="I'm Shanbel Kibre, a Full-Stack Developer specializing in React, TypeScript, and Tailwind CSS. Explore my projects and let's build something great together." />
