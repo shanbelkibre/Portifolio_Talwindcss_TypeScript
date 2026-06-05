@@ -11,13 +11,15 @@ const Index = () => {
     <>
       <Helmet>
          
-          <meta name="google-site-verification" content="MoPQDtCg0ZsIK-28mtxnmNP_eVNY2XNRhvst37iqP8E" />
+<meta name="google-site-verification" content="MoPQDtCg0ZsIK-28mtxnmNP_eVNY2XNRhvst37iqP8E" />
+
         {/* Basic SEO */}
         <title>Shanbel Kibre | Full-Stack Developer</title>
         <meta name="description" content="I'm Shanbel Kibre, a Full-Stack Developer specializing in React, TypeScript, and Tailwind CSS. Explore my projects and let's build something great together." />
         <meta name="keywords" content="Shanbel Kibre, Shambel Kibre, Full-Stack Developer, Software Engineer, React Developer, TypeScript, Tailwind CSS, Portfolio, Ethiopia" />
         <meta name="author" content="Shanbel Kibre" />
         <link rel="canonical" href="https://shanbelkibredev.vercel.app/" />
+       
 
         {/* Open Graph (LinkedIn, WhatsApp, Facebook) */}
         <meta property="og:type" content="website" />
